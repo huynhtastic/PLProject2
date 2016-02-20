@@ -2,12 +2,10 @@ package huynh;
 
 public class Account implements Depositable, Withdrawable, Balanceable {
 
-    public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        System.out.println("Welcome to the Account Calculator.");
-        System.out.println();
-        System.out.println("Starting Balance");
-        System.out.println("Checking: ");
+    private double Balance;
+
+    public Account(){
+        Balance = 0;
     }
 
     public void deposit(double amount) {
@@ -19,14 +17,15 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     }
 
     public double getBalance(){
-        return 0;
+        return Balance;
     }
 
     public void setBalance(double amount) {
-
+        Balance = amount;
     }
 
     public String getBalanceFormatted() {
+
         return "";
     }
 
