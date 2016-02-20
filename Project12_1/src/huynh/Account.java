@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 
 public class Account implements Depositable, Withdrawable, Balanceable {
 
-    private double Balance;
+    public double Balance;
 
     public Account(){
         Balance = 0;

@@ -9,8 +9,12 @@ public class CheckingAccount extends Account {
 
     private double MonthlyFee;
 
-    public void subtractMonthlyFee(){
+    public CheckingAccount(){
+        super();
+    }
 
+    public void subtractMonthlyFee(){
+        Balance = Balance - MonthlyFee;
     }
 
     public void setMonthlyFee(){

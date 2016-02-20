@@ -40,12 +40,14 @@ public class AccountApp {
                 System.out.print("Amount: ");
                 Double amount = scan.nextDouble(); //record input
                 //withdraw
-                account.withdraw(amount);
+                Transactions t = new Transactions();
+                t.withdraw(account, amount);
             } else if (answer.equals("d")||answer.equals("D")) {
                 System.out.print("Amount: ");
                 Double amount = scan.nextDouble(); //record input
                 //deposit
-                account.deposit(amount);
+                Transactions t = new Transactions();
+                t.deposit(account, amount);
             } else {
                 System.out.println("Invalid response.");
             }
@@ -58,6 +60,7 @@ public class AccountApp {
         }
 
         account.setMonthlyFee();
+        account.subtractMonthlyFee();
         System.out.println();
         System.out.println("Monthly Fees");
         System.out.print("Checking fee: ");
@@ -67,7 +70,7 @@ public class AccountApp {
 
         System.out.println("Final Balance");
         System.out.print("Checking: ");
-
+        System.out.print(account.getBalanceFormatted());
 
     }
 }
