@@ -1,5 +1,7 @@
 package huynh;
 
+import java.text.NumberFormat;
+
 public class Account implements Depositable, Withdrawable, Balanceable {
 
     private double Balance;
@@ -13,7 +15,7 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     }
 
     public void withdraw(double amount) {
-
+        Balance = Balance - amount;
     }
 
     public double getBalance(){
@@ -25,8 +27,8 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     }
 
     public String getBalanceFormatted() {
-
-        return "";
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        return formatter.format(Balance);
     }
 
 }
