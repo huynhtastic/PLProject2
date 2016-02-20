@@ -11,7 +11,7 @@ public class Account implements Depositable, Withdrawable, Balanceable {
     }
 
     public void deposit(double amount) {
-
+        Balance = Balance + amount;
     }
 
     public void withdraw(double amount) {

@@ -1,5 +1,7 @@
 package huynh;
 
+import java.text.NumberFormat;
+
 /**
  * Created by Eric on 2/19/2016.
  */
@@ -12,14 +14,15 @@ public class CheckingAccount extends Account {
     }
 
     public void setMonthlyFee(){
-
+        MonthlyFee = 1;
     }
 
     public double getMonthlyFee(){
-        return 0;
+        return MonthlyFee;
     }
 
     public String getMonthlyFeeFormatted(){
-        return "";
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        return formatter.format(MonthlyFee);
     }
 }

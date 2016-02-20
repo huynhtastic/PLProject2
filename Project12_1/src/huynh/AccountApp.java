@@ -17,19 +17,20 @@ public class AccountApp {
         System.out.print("Checking: ");
 
         //Start new account
-        Account account = new Account();
+        CheckingAccount account = new CheckingAccount();
         account.setBalance(1000); //input 1000 into balance
 
         //print current balance formatted
         System.out.print(account.getBalanceFormatted());
         System.out.println();
         System.out.println("Enter the transaction for the month");
-        System.out.println();
 
         //variable to record whether user wants to continue or not
         String status = "y";
 
+        //loop to keep the console operational as long as user wants it
         while (status.equals("y")){
+            System.out.println();
             //Ask whether to deposit or withdraw
             System.out.print("Withdrawal or deposit? (w/d): ");
             String answer = scan.next();
@@ -56,13 +57,17 @@ public class AccountApp {
             status = answer;
         }
 
+        account.setMonthlyFee();
+        System.out.println();
+        System.out.println("Monthly Fees");
+        System.out.print("Checking fee: ");
+        System.out.print(account.getMonthlyFeeFormatted());
+        System.out.println();
+        System.out.println();
 
-
-
-
-
+        System.out.println("Final Balance");
+        System.out.print("Checking: ");
 
 
     }
-
 }
